@@ -1,4 +1,4 @@
-const Mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
 const _endereco = {
 	rua: String,
@@ -11,4 +11,4 @@ const _user = {
 	endereco: _endereco
 };
 
-module.exports = new Mongoose.Schema(_user); 
+module.exports = new mongoose.Schema(_user); 

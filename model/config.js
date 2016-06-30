@@ -1,8 +1,8 @@
-module.exports = Mongoose=>{
-	const db = Mongoose.connection;
+module.exports = mongoose=>{
+	const db = mongoose.connection;
 	db.on('error', console.error);
 	db.once('open', function() {
 	  console.log('Mongodb Conectado');
 	});
-	Mongoose.connect('mongodb://localhost/vuejs');
+	mongoose.connect('mongodb://localhost/vuejs');
 };
