@@ -2,18 +2,23 @@
 <html>
   <head>
     <title>Vue.js</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
   </head>
   <body>
-  	
     <div id="app">
-	  <h1>Hello App!</h1>
-	  <p>
-	    <!-- use v-link directive for navigation. -->
-	    <a v-link="{ path: '/foo' }">Go to Foo</a>
-	    <a v-link="{ path: '/bar' }">Go to Bar</a>
-	  </p>
-	  <!-- route outlet -->
+  	<ul class="nav nav-tabs" id="menu">
+      <li role="presentation" v-if="$route.path == '/'" class="active"><a v-link="{ path: '/' }">Home{{a}}</a></li>
+      <li role="presentation" v-else class=""><a v-link="{ path: '/' }">Home{{a}}</a></li>
+      <li role="presentation" v-if="$route.path == '/foo'" class="active"><a v-link="{ path: '/foo' }">Usuarios</a></li>
+      <li role="presentation" v-else class=""><a v-link="{ path: '/foo' }">Usuarios</a></li>
+      <li role="presentation" v-if="$route.path == '/bar'" class="active"><a v-link="{ path: '/bar' }">Posts</a></li>
+      <li role="presentation" v-else class=""><a v-link="{ path: '/bar' }">Posts</a></li>
+    </ul>
+    <div id="example">
+  <my-component></my-component>
+</div>
 	  <router-view></router-view>
 	</div>
 
