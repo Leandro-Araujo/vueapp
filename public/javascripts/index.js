@@ -12,7 +12,7 @@ var Foo = Vue.extend({
     },
     route: {
 		data: function() {
-			return Vue.$http.get('/api/user').then(function(success){
+			return this.$http.get('/api/user').then(function(success){
 				// Retorna um objeto que será mesclado com o objeto data do componente
 				return { usuarios: success.data.data };
 			});
