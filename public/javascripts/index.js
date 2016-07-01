@@ -10,13 +10,14 @@ var Foo = Vue.extend({
         	usuarios: []
         }
     },
-    ready: function(){
-        var ve = function(ts){
-        Vue.http.get('/api/user').then(function(success){
-            ts.usuarios = success.data.data;
-        });}
-        ve(this);        
-    }
+    route: {
+		data: function() {
+			return this.$http.get('/api/user').then(function(success){
+				// Retorna um objeto que será mesclado com o objeto data do componente
+				return { usuarios: success.data.data };
+			});
+		}
+	}
 })
 
 
