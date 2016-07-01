@@ -1,17 +1,38 @@
+Vue.use(VueResource);
+
+//Vue.http.options.root = '/api';
+
 // Define some components
 var Foo = Vue.extend({
-    template: '<p>This is foo!</p>'
+    template: '<pid="vs">This is foo!</p><br><div v-for="usuario in usuarios"><span>{{usuario.nome}}</span></div>',
+    data: function() {
+        return {
+        	usuarios: []
+        }
+    },
+    ready: function(){
+        var ve = function(ts){
+        Vue.http.get('/api/user').then(function(success){
+            ts.usuarios = success.data.data;
+        });}
+        ve(this);        
+    }
 })
+
+
+
 
 var Bar = Vue.extend({
     template: '<p>This is bar!</p>'
 })
+
 
 // The router needs a root component to render.
 // For demo purposes, we will just use an empty one
 // because we are using the HTML as the app template.
 // !! Note that the App is not a Vue instance.
 var App = Vue.extend({})
+
 
 // Create a router instance.
 // You can pass in additional options here, but let's

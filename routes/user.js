@@ -8,3 +8,11 @@ module.exports = (req, res) => {
   	res.json({data: user});
   });
 }
+
+/*user = new User();
+user.nome = "Pedro";
+user.idade = 32;
+user.endereco = {rua: "Maré baixa", bairro: 'Centro'};
+user.save(function(err, user){
+	console.log(user);
+});*/
