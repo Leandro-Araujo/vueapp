@@ -1,5 +1,6 @@
+'use strict'
 const mongoose = require('mongoose');
 module.exports = schema =>{
-	console.log('Criando o model');
-	mongoose.model('User', schema); 
-}
+	mongoose.model('User', schema.user); 
+	mongoose.model('Post', schema.post);
+};

@@ -1,3 +1,4 @@
+'use strict'
 module.exports = mongoose=>{
 	const db = mongoose.connection;
 	db.on('error', console.error);

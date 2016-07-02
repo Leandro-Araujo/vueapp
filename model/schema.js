@@ -1,3 +1,4 @@
+'use strict'
 const mongoose = require('mongoose');
 
 const _endereco = {
@@ -11,4 +12,13 @@ const _user = {
 	endereco: _endereco
 };
 
-module.exports = new mongoose.Schema(_user); 
+const _post = {
+	conteudo : String,
+	created_at: { type: Date, default: Date.now },
+	user: {type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+};
+
+module.exports = {
+	user: new mongoose.Schema(_user),
+	post: new mongoose.Schema(_post)
+}; 

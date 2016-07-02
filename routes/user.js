@@ -1,5 +1,6 @@
+'use strict'
 const mongoose = require('mongoose');
-const User = mongoose.model('User');
+const User     = mongoose.model('User');
 
 // GET ALL
 module.exports = (req, res) => {
