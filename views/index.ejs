@@ -11,13 +11,13 @@
   	<ul class="nav nav-tabs" id="menu">
       <li role="presentation" v-if="$route.path == '/'" class="active"><a v-link="{ path: '/' }">Home{{a}}</a></li>
       <li role="presentation" v-else class=""><a v-link="{ path: '/' }">Home{{a}}</a></li>
-      <li role="presentation" v-if="$route.path == '/foo'" class="active"><a v-link="{ path: '/foo' }">Usuarios</a></li>
-      <li role="presentation" v-else class=""><a v-link="{ path: '/foo' }">Usuarios</a></li>
-      <li role="presentation" v-if="$route.path == '/bar'" class="active"><a v-link="{ path: '/bar' }">Posts</a></li>
-      <li role="presentation" v-else class=""><a v-link="{ path: '/bar' }">Posts</a></li>
+      <li role="presentation" v-if="$route.path == '/users'" class="active"><a v-link="{ path: '/users' }">Usuarios</a></li>
+      <li role="presentation" v-else class=""><a v-link="{ path: '/users' }">Usuarios</a></li>
+      <li role="presentation" v-if="$route.path == '/posts'" class="active"><a v-link="{ path: '/posts' }">Posts</a></li>
+      <li role="presentation" v-else class=""><a v-link="{ path: '/posts' }">Posts</a></li>
     </ul>
     <div id="example">
-  <my-component></my-component>
+  
 </div>
 	  <router-view></router-view>
 	</div>

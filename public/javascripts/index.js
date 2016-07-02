@@ -5,7 +5,9 @@ Vue.use(VueResource);
 // Define some components
 
 var Foo = Vue.extend({
-    template: '<pid="vs">This is foo!</p><br><div v-for="usuario in usuarios"><span>{{usuario.nome}}</span></div>',
+    template: '<ul class="list-group">'+
+              '<li v-for="usuario in usuarios" class="list-group-item"><span class="badge">{{usuario.idade}}</span>{{usuario.nome}}</li>'+
+              '<ul>', 
     data: function() {
         return {
         	usuarios: [],
@@ -23,7 +25,20 @@ var Foo = Vue.extend({
 })
 
 var Bar = Vue.extend({
-    template: '<p>This is bar!</p>'
+    template: '<div class="panel panel-default">'+
+              '<div class="panel-heading">Panel heading without title</div>'+
+              '<div class="panel-body">'+
+              'Panel content'+
+              '</div>'+
+              '</div>'+
+              '<div class="panel panel-default">'+
+              '<div class="panel-heading">'+
+              '<h3 class="panel-title">Panel title</h3>'+
+              '</div>'+
+              '<div class="panel-body">'+
+              'Panel content'+
+              '</div>'+
+              '</div>'
 })
 
 // The router needs a root component to render.
@@ -53,10 +68,10 @@ var router = new VueRouter({
 // Vue.extend(), or just a component options object.
 // We'll talk about nested routes later.
 router.map({
-    '/foo': {
+    '/users': {
         component: Foo
     },
-    '/bar': {
+    '/posts': {
         component: Bar
     }
 })
