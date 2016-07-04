@@ -1,21 +1,33 @@
 'use strict'
 const mongoose = require('mongoose');
 
+
+const rua    = require('./fields/fields-rua');
+const bairro = require('./fields/fields-bairro');
+const nome   = require('./fields/fields-nome');
+const idade  = require('./fields/fields-idade');
+const conteudo = require('./fields/fields-conteudo');
+const criado_em = require('./fields/fields-criado_em');
+const usuario   = require('./fields/fields-usuario');
+
+
+
 const _endereco = {
-	rua: String,
-	bairro: String
+	rua,
+	bairro
 };
 
 const _user = {
-	nome: String,
-	idade: Number,
-	endereco: _endereco
+	nome,
+	idade,
+	endereco: _endereco,
+	criado_em
 };
 
 const _post = {
-	conteudo : String,
-	created_at: { type: Date, default: Date.now },
-	user: {type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+	conteudo,
+	criado_em,
+	usuario
 };
 
 module.exports = {
